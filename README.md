@@ -1,7 +1,7 @@
 # FEDSync
 FEDSync is software designed to control the [FED3 Unit](https://github.com/KravitzLabDevices/FED3) over a serial connection
 
-<img src="https://github.com/cora-reef/FEDSync/blob/master/photos/FEDSync-UI.png" width="500em">
+<img src="https://github.com/Hardaway-Lab/FEDSync/blob/master/photos/FEDSync-UI.png" width="500em">
 
 ## Requirements
 ### Linux
@@ -15,7 +15,7 @@ Windows has a bundled executable which can be downloaded from releases.
 
 
 ## Arduino Setup
-A [custom library](https://github.com/cora-reef/FED3_library) for the FED3 device is currently required. (being added to main library)
+A [custom library](https://github.com/Hardaway-Lab/FED3_library) for the FED3 device is currently required. (being added to main library)
 
 
 ## How to Use
@@ -29,7 +29,7 @@ We will add the RTC Clock header to the includes
 ```cpp
 #include "RTClib.h"
 ```
-<img src="https://github.com/cora-reef/FEDSync/blob/master/photos/header.png" width="">
+<img src="https://github.com/Hardaway-Lab/FEDSync/blob/master/photos/header.png" width="">
 
 Then we will modify the `setup` function to enable the serial functions
 ```cpp
@@ -40,7 +40,7 @@ void setup() {
   Serial.begin(57600);
 }
 ```
-<img src="https://github.com/cora-reef/FEDSync/blob/master/photos/setup.png" width="">
+<img src="https://github.com/Hardaway-Lab/FEDSync/blob/master/photos/setup.png" width="">
 
 Adding a function to parse commands sent by FEDSync
 ```cpp
@@ -68,7 +68,7 @@ void parse_command() {
 }
 ```
 
-<img src="https://github.com/cora-reef/FEDSync/blob/master/photos/parse.png" width="">
+<img src="https://github.com/Hardaway-Lab/FEDSync/blob/master/photos/parse.png" width="">
 
 
 Before we decalre `loop` we are going to add a boolean that will to wait for the fed device to be used.
@@ -77,7 +77,7 @@ bool started = false;
 void loop() {...
 ```
 
-<img src="https://github.com/cora-reef/FEDSync/blob/master/photos/globals.png" width="">
+<img src="https://github.com/Hardaway-Lab/FEDSync/blob/master/photos/globals.png" width="">
 
 Lastly modify the `loop` to wait for a left poke before starting the device, this will let us talk to the device before we start the experiment
 ```cpp
@@ -88,4 +88,4 @@ void loop() {
   }
   ...
 ```
-<img src="https://github.com/cora-reef/FEDSync/blob/master/photos/loop.png" width="">
+<img src="https://github.com/Hardaway-Lab/FEDSync/blob/master/photos/loop.png" width="">
